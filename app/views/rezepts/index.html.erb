@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rezepts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rezept</th>
+      <th>Rezept name</th>
+      <th>Rezept bemerkung</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rezepts.each do |rezept| %>
+      <tr>
+        <td><%= rezept.rezept_id %></td>
+        <td><%= rezept.rezept_name %></td>
+        <td><%= rezept.rezept_bemerkung %></td>
+        <td><%= link_to 'Show', rezept %></td>
+        <td><%= link_to 'Edit', edit_rezept_path(rezept) %></td>
+        <td><%= link_to 'Destroy', rezept, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rezept', new_rezept_path %>
