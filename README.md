@@ -1,9 +1,19 @@
-# README
+#reSushi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+reSushi is the opportunity for tech-savvy people,
+who come from different cultural backgrounds and
+bring along different technical devices,
+to look for your favorite food here and now in the big city.
+It combines the richness of Ruby technology with the decade-long Japanese tradition of shokuhin sampuru.
 
-Things you may want to cover:
+The site is subject to Zen's attributes of simplicity as a self-understanding and
+independence of word and character. So there is more room for another motto of the Zen:
+
+"I would like to offer something to anyone To help you"
+
+Thus the needs of the target group in the search for good peace are met in a special way.
+
+*Project Info*
 
 * Ruby version
 
