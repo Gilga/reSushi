@@ -1,5 +1,5 @@
 # reSushi
-![Build Status](https://travis-ci.org/Gilga/reSushi.svg?branch=master)](https://travis-ci.org/Gilga/reSushi)
+[![Build Status](https://travis-ci.org/Gilga/reSushi.svg?branch=master)](https://travis-ci.org/Gilga/reSushi)
 
 reSushi is the opportunity for tech-savvy people,
 who come from different cultural backgrounds and
