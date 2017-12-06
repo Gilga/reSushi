@@ -1,8 +1,10 @@
-rspec.feature "Zutaten", :type => :feature do
-  scenario "go to zutat" do
-    visit " /zutats"
+require "rails_helper"
 
-    #expect(page).to have_text("Reis")
-    it { should have_selector("h1", text: 'Zutats') }
+RSpec.feature "Zutaten", :type => :feature do
+  scenario "go to zutat" do
+    visit "/ingredients/"
+
+    expect(page).to have_text("Ingredients")
+    #it { should have_selector("h1", text: 'Ingredients') }
   end
 end
