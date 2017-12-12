@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Zutats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zutat name</th>
+      <th>Zutat bemerkung</th>
+      <th>Ernaehrungs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zutats.each do |zutat| %>
+      <tr>
+        <td><%= zutat.zutat_name %></td>
+        <td><%= zutat.zutat_bemerkung %></td>
+        <td><%= zutat.ernaehrungs_id %></td>
+        <td><%= link_to 'Show', zutat %></td>
+        <td><%= link_to 'Edit', edit_zutat_path(zutat) %></td>
+        <td><%= link_to 'Destroy', zutat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zutat', new_zutat_path %>

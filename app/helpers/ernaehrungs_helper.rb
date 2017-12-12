@@ -1,0 +1,2 @@
+module ErnaehrungsHelper
+end

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ernaehrung_bez: MyString
+  ernaehrung_bemerkung: MyText
+
+two:
+  ernaehrung_bez: MyString
+  ernaehrung_bemerkung: MyText

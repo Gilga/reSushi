@@ -1,0 +1,32 @@
+<%= form_with(model: zutat, local: true) do |form| %>
+  <% if zutat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(zutat.errors.count, "error") %> prohibited this zutat from being saved:</h2>
+
+      <ul>
+      <% zutat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :zutat_name %>
+    <%= form.text_field :zutat_name, id: :zutat_zutat_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zutat_bemerkung %>
+    <%= form.text_area :zutat_bemerkung, id: :zutat_zutat_bemerkung %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ernaehrungs_id %>
+    <%= form.number_field :ernaehrungs_id, id: :zutat_ernaehrungs_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

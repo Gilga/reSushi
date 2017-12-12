@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  preis: 1
+  rezepte_name: MyString
+  rezepte_bemerkung: MyText
+  zutat_id: 1
+
+two:
+  preis: 1
+  rezepte_name: MyString
+  rezepte_bemerkung: MyText
+  zutat_id: 1

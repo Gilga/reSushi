@@ -1,0 +1,27 @@
+<%= form_with(model: ernaehrung, local: true) do |form| %>
+  <% if ernaehrung.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ernaehrung.errors.count, "error") %> prohibited this ernaehrung from being saved:</h2>
+
+      <ul>
+      <% ernaehrung.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ernaehrung_bez %>
+    <%= form.text_field :ernaehrung_bez, id: :ernaehrung_ernaehrung_bez %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ernaehrung_bemerkung %>
+    <%= form.text_area :ernaehrung_bemerkung, id: :ernaehrung_ernaehrung_bemerkung %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

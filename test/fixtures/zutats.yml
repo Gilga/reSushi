@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zutat_name: MyString
+  zutat_bemerkung: MyText
+  ernaehrungs_id: 1
+
+two:
+  zutat_name: MyString
+  zutat_bemerkung: MyText
+  ernaehrungs_id: 1

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ernaehrung bez:</strong>
+  <%= @ernaehrung.ernaehrung_bez %>
+</p>
+
+<p>
+  <strong>Ernaehrung bemerkung:</strong>
+  <%= @ernaehrung.ernaehrung_bemerkung %>
+</p>
+
+<%= link_to 'Edit', edit_ernaehrung_path(@ernaehrung) %> |
+<%= link_to 'Back', ernaehrungs_path %>
