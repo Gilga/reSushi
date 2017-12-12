@@ -1,4 +1,9 @@
 language: ruby
 rvm:
  - 2.2.6
-
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 6RyzCZi6BSJUKmar2zQg
+  on:
+    branch: master
