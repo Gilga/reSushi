@@ -7,6 +7,6 @@ branches:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: 6RyzCZi6BSJUKmar2zQg
+  github_token: $GITHUB_TOKEN
   on:
     branch: master
