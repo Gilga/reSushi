@@ -37,6 +37,10 @@ class RezeptsController < ApplicationController
     end
   end
 
+  def hello
+      render text: "life without sushi c'mon think about it!"
+  end
+
   # PATCH/PUT /rezepts/1
   # PATCH/PUT /rezepts/1.json
   def update
@@ -72,3 +76,4 @@ class RezeptsController < ApplicationController
       params.require(:rezept).permit(:rezept_id, :rezept_name, :rezept_bemerkung)
     end
 end
+
