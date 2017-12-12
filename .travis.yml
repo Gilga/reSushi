@@ -1,4 +1,12 @@
 language: ruby
 rvm:
  - 2.2.6
-
+branches:
+  except:
+    - gh-pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
