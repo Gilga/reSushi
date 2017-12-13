@@ -15,21 +15,21 @@ independence of word and character. So there is more room for another motto of t
 Thus the needs of the target group in the search for good peace are met in a special way.
 
 *Project Info*
+Website: [https://resushi.herokuapp.com](https://resushi.herokuapp.com)
 
 * Ruby version
+>= 2.2.6
+
+* Rails version
+>= 5.1.4
 
 * System dependencies
 
 * Configuration
+bundle install
 
-* Database creation
+* Database migrate
+rake db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Start server
+rails server
