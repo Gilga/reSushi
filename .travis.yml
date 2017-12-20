@@ -1,14 +1,12 @@
+language: ruby
+rvm:
+  - 2.2.6
+branches:
+  - master
 jobs:
   include:
     - stage: Start
       script: skip
-      branches:
-        - master
-    - stage: Install Libs
-      script: skip
-      language: ruby
-      rvm:
-        - 2.2.6
     - stage: Deploy
       script: skip
       deploy: &heroku
