@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nutritions</h1>
+<%= link_to 'Back', root_path %>
+
+<table width="50%">
+  <thead>
+    <tr>
+			<th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3">Modify</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nutritions.each do |nutrition| %>
+      <tr>
+				<td><%= image_tag("maki.png", width: '100px', alt: 'Santa is not here you did not behave well') %></td>
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= nutrition.name %></td>
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= nutrition.description %></td>
+        <td><%= link_to 'Show', nutrition %></td>
+        <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
+        <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nutrition', new_nutrition_path %>

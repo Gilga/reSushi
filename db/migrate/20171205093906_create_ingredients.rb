@@ -1,10 +1,10 @@
 class CreateIngredients < ActiveRecord::Migration[5.1]
   def change
     create_table :ingredients do |t|
-      t.integer :ingredient_id
-      t.string :ingredient_name
-      t.text :ingredient_description
-
+      t.string :name
+      t.text :description
+			t.string :image
+			t.integer :nutrition_id
       t.timestamps
     end
   end

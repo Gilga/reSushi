@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipes</h1>
+<%= link_to 'Back', root_path %>
+
+<table width="50%">
+  <thead>
+    <tr>
+			<th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th colspan="3">Modify</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+				<td><%= image_tag("lachs.png", width: '100px', alt: 'Santa is not here you did not behave well') %></td>
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= recipe.name %></td>
+				<td onclick="this.style.backgroundColor='#FFFF00'"><%= recipe.price %></td>
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= recipe.description %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>

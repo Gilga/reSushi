@@ -3,22 +3,25 @@
 <h1>Ingredients</h1>
 <%= link_to 'Back', root_path %>
 
-<table>
+<table width="50%">
   <thead>
   <tr>
-    <th>Ingredient</th>
-    <th>Ingredient Name</th>
-    <th>Ingredient Description</th>
-    <th colspan="3"></th>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Description</th>
+		<th>Nutrition</th>
+    <th colspan="3">Modify</th>
   </tr>
   </thead>
 
   <tbody>
   <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.ingredient_id %></td>
-        <td><%= ingredient.ingredient_name %></td>
-        <td><%= ingredient.ingredient_description %></td>
+				<td><%= image_tag("gurke.png", width: '100px', alt: 'Santa is not here you did not behave well') %></td>
+				<!-- <td><%= ingredient.image %></td> -->
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= ingredient.name %></td>
+        <td onclick="this.style.backgroundColor='#FFFF00'"><%= ingredient.description %></td>
+				<td onclick="this.style.backgroundColor='#FFFF00'"><%= ingredient.nutrition_id %></td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
         <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

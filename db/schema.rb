@@ -15,49 +15,32 @@ ActiveRecord::Schema.define(version: 20171205093906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ernaehrungs", force: :cascade do |t|
-    t.string "ernaehrung_bez"
-    t.text "ernaehrung_bemerkung"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "ingredients", force: :cascade do |t|
-    t.integer "ingredient_id"
-    t.string "ingredient_name"
-    t.text "ingredient_description"
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.integer "nutrition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "rezeptes", force: :cascade do |t|
-    t.integer "preis"
-    t.string "rezepte_name"
-    t.text "rezepte_bemerkung"
-    t.integer "zutat_id"
+  create_table "nutritions", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "rezepts", force: :cascade do |t|
-    t.integer "rezept_id"
-    t.string "rezept_name"
-    t.text "rezept_bemerkung"
+  create_table "recipes", force: :cascade do |t|
+    t.integer "price"
+    t.string "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "zutat_id"
   end
 
   create_table "widgets", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "zutats", force: :cascade do |t|
-    t.string "zutat_name"
-    t.text "zutat_bemerkung"
-    t.integer "ernaehrungs_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

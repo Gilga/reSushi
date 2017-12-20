@@ -3,13 +3,19 @@ rvm:
  - 2.2.6
 branches:
   - master
-deploy:
-  skip_cleanup: true
-  provider: heroku
-  api_key:
-    secure: $HEROKU_API_KEY
-  app: resushi
-  on: master
-  run:
-    - "rake db:migrate"
-    - "rake cleanup"
+jobs:
+  include:
+    - stage: start
+      script: skip
+    - stage: deploy
+      script: skip
+      deploy:
+        skip_cleanup: true
+        provider: heroku
+        api_key:
+          secure: $HEROKU_API_KEY
+        on: master
+        app: resushi
+        run:
+          - "rake db:migrate"
+          - "rake cleanup"
