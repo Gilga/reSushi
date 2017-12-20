@@ -15,6 +15,7 @@ independence of word and character. So there is more room for another motto of t
 Thus the needs of the target group in the search for good peace are met in a special way.
 
 *Project Info*
+
 Website: [https://resushi.herokuapp.com](https://resushi.herokuapp.com)
 
 * Ruby version
