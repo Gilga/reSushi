@@ -1,21 +1,28 @@
-language: ruby
-rvm:
- - 2.2.6
-branches:
-  - master
 jobs:
   include:
-    - stage: start
+    - stage: Start
       script: skip
-    - stage: deploy
+      branches:
+        - master
+    - stage: Install Libs
       script: skip
-      deploy:
+      language: ruby
+      rvm:
+        - 2.2.6
+    - stage: Deploy
+      script: skip
+      deploy: &heroku
         skip_cleanup: true
         provider: heroku
         api_key:
           secure: $HEROKU_API_KEY
         on: master
         app: resushi
+    - stage: Reset Database
+      script: skip
+      deploy:
+        <<: *heroku
         run:
+          - "rake db:reset"
           - "rake db:migrate"
           - "rake cleanup"
