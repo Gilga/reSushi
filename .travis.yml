@@ -16,9 +16,7 @@ jobs:
           secure: $HEROKU_API_KEY
         on: master
         app: resushi
-      after_deploy:
         run:
-          - "heroku pg:reset DATABASE_URL"
           - "rake db:migrate"
           - restart
           - "rake db:seed"
