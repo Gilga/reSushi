@@ -3,17 +3,13 @@ rvm:
   - 2.2.6
 branches:
   - master
-sudo: required
-before_script:
-  # this install.sh script requires sudo
-  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 jobs:
   include:
     - stage: Start
       script: skip
     - stage: Deploy
       script: skip
-      deploy: &heroku
+      deploy:
         skip_cleanup: true
         provider: heroku
         api_key:
@@ -21,6 +17,7 @@ jobs:
         on: master
         app: resushi
         run:
-          - "pg:reset DATABASE_URL"
+          - "heroku pg:reset DATABASE_URL"
           - "rake db:migrate"
+          - restart
           - "rake db:seed"
