@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_obj, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.json
@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(obj_params)
+    @recipe = Recipe.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save
@@ -45,7 +45,7 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1.json
   def update
     respond_to do |format|
-      if @recipe.update(obj_params)
+      if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
       else
@@ -67,12 +67,12 @@ class RecipesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_obj
+    def set_recipe
       @recipe = Recipe.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def obj_params
+    def recipe_params
       params.require(:recipe).permit(:price, :name, :description)
     end
 end

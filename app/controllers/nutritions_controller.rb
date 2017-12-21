@@ -1,5 +1,5 @@
 class NutritionsController < ApplicationController
-  before_action :set_obj, only: [:show, :edit, :update, :destroy]
+  before_action :set_nutrition, only: [:show, :edit, :update, :destroy]
 
   # GET /nutritions
   # GET /nutritions.json
@@ -24,7 +24,7 @@ class NutritionsController < ApplicationController
   # POST /nutritions
   # POST /nutritions.json
   def create
-    @nutrition = Nutrition.new(obj_params)
+    @nutrition = Nutrition.new(nutrition_params)
 
     respond_to do |format|
       if @nutrition.save
@@ -41,7 +41,7 @@ class NutritionsController < ApplicationController
   # PATCH/PUT /nutritions/1.json
   def update
     respond_to do |format|
-      if @nutrition.update(obj_params)
+      if @nutrition.update(nutrition_params)
         format.html { redirect_to @nutrition, notice: 'Nutrition was successfully updated.' }
         format.json { render :show, status: :ok, location: @nutrition }
       else
@@ -63,12 +63,12 @@ class NutritionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_obj
+    def set_nutrition
       @nutrition = Nutrition.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def obj_params
+    def nutrition_params
       params.require(:nutrition).permit(:name, :description)
     end
 end

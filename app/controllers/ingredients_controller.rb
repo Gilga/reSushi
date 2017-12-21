@@ -69,8 +69,8 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-			#@ernaehrung = Ernaehrung.find(1)
-			#@ingredient.ernaehrungs_id = @ernaehrung.id
+			#@nutrition = Nutrition.find(1)
+			#@ingredient.nutrition_id = @nutrition.id
       params.require(:ingredient).permit(:name, :description, :image, :nutrition_id)
     end
 end

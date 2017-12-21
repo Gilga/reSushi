@@ -17,6 +17,6 @@ jobs:
         on: master
         app: resushi
         run:
-          - "rake db:reset"
+          - "pg:reset DATABASE"
           - "rake db:migrate"
-          - "rake cleanup"
+          - "rake db:seed"
