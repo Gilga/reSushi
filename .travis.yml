@@ -17,7 +17,7 @@ jobs:
         on: master
         app: resushi
       after_deploy:
-        script:
+        run:
           - "heroku pg:reset DATABASE_URL"
           - "rake db:migrate"
           - restart
