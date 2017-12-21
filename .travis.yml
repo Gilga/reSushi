@@ -3,6 +3,10 @@ rvm:
   - 2.2.6
 branches:
   - master
+sudo: required
+before_script:
+  # this install.sh script requires sudo
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 jobs:
   include:
     - stage: Start
@@ -17,6 +21,6 @@ jobs:
         on: master
         app: resushi
         run:
-          - "pg:reset DATABASE"
+          - "pg:reset DATABASE_URL"
           - "rake db:migrate"
           - "rake db:seed"
